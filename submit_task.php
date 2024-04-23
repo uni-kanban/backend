@@ -1,5 +1,5 @@
 <?php
-    require('includes/db.php');
+    require(dirname(__FILE__) . '/includes/db.php');
 
     $assignment_id = $_POST['assignment_id'];
     $file_path = 'uploads/' . basename($_FILES['file']['name']);

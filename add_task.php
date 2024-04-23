@@ -1,5 +1,5 @@
 <?php
-    require('includes/db.php');
+    require(dirname(__FILE__) . '/includes/db.php');
 
     $data = json_decode(file_get_contents('php://input'), true);
     $subject_id = $data['subject_id'];
