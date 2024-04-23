@@ -1,5 +1,5 @@
 <?php
-    require('includes/bd.php');
+    require('includes/db.php');
 
     $sql = "SELECT * FROM subjects";
     $result = $conn->query($sql);

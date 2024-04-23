@@ -1,5 +1,5 @@
 <?php
-    require('includes/bd.php');
+    require('includes/db.php');
 
     parse_str(file_get_contents("php://input"), $data);
     $id = $data['id'];
