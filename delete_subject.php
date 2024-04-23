@@ -10,3 +10,5 @@
     } else {
         echo json_encode(["error" => "Error: " . $sql . "<br>" . $conn->error]);
     }
+    header("Location: /teacher");
+    die();
