@@ -1,13 +1,12 @@
 <?php
     require(dirname(__FILE__) . '/includes/db.php');
 
-    $data = json_decode(file_get_contents('php://input'), true);
-    $subject_id = $data['subject_id'];
-    $status = $data['status'];
-    $name = $data['name'];
-    $description = $data['description'];
-    $grade = $data['grade'];
-    $deadline = $data['deadline'];
+    $subject_id = $_POST['subject_id'];
+    $status = $_POST['status'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $grade = $_POST['grade'];
+    $deadline = $_POST['deadline'];
 
     $sql = "INSERT INTO assignments (subject_id, status, name, description, grade, deadline) VALUES ('$subject_id', '$status', '$name', '$description', '$grade', '$deadline')";
     if ($conn->query($sql) === TRUE) {
