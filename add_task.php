@@ -5,10 +5,9 @@
     $status = $_POST['status'];
     $name = $_POST['name'];
     $description = $_POST['description'];
-    $grade = $_POST['grade'];
     $deadline = $_POST['deadline'];
 
-    $sql = "INSERT INTO assignments (subject_id, status, name, description, grade, deadline) VALUES ('$subject_id', '$status', '$name', '$description', '$grade', '$deadline')";
+    $sql = "INSERT INTO assignments (subject_id, status, name, description, deadline) VALUES ('$subject_id', '$status', '$name', '$description', '$deadline')";
     if ($conn->query($sql) === TRUE) {
         echo json_encode(["message" => "Assignment added successfully"]);
     } else {
