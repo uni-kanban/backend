@@ -4,11 +4,17 @@
     $id = $_POST['id'];
     $grade = $_POST['grade'];
 
-    $sql = "UPDATE assignments SET grade='$grade' WHERE id=$id";
+    // Update status to "graded"
+    $status = 'graded';
+
+    $sql = "UPDATE assignments SET grade='$grade', status='$status' WHERE id=$id";
     if ($conn->query($sql) === TRUE) {
-        echo json_encode(["message" => "Assignment graded successfully"]);
+        // Redirect to /teacher after grading successfully
+        header("Location: /teacher");
+        exit();
     } else {
         echo json_encode(["error" => "Error: " . $sql . "<br>" . $conn->error]);
     }
     
     $conn->close();
+?>

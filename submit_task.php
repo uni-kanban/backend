@@ -7,6 +7,7 @@
     if (move_uploaded_file($_FILES['file']['tmp_name'], $file_path)) {
         $sql = "UPDATE assignments SET file_path='$file_path', status='submitted' WHERE id=$assignment_id";
         if ($conn->query($sql) === TRUE) {
+            header("Location: /student");
             echo json_encode(["message" => "Assignment submitted successfully"]);
         } else {
             echo json_encode(["error" => "Error: " . $sql . "<br>" . $conn->error]);
